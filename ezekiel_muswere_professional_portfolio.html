@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101827">
+<meta name="description" content="Professional portfolio of Ezekiel Ngonidzashe Muswere, aspiring software developer based in Mutare, Zimbabwe.">
+<title>Ezekiel Muswere | Software Development & IT Portfolio</title>
+<style>
+:root{
+  --ink:#101827;--ink-2:#1c2b41;--gold:#eab64d;--gold-soft:#fff5dc;
+  --paper:#fff;--bg:#f4f6f9;--muted:#667085;--line:#e3e8ef;
+  --green:#13795b;--shadow:0 18px 55px rgba(16,24,39,.08);--radius:20px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
+a{color:inherit}
+button,a{-webkit-tap-highlight-color:transparent}
+button{font:inherit}
+.container{width:min(1100px,calc(100% - 36px));margin-inline:auto}
+.topbar{position:sticky;top:0;z-index:50;background:rgba(16,24,39,.97);backdrop-filter:blur(12px);color:white;border-bottom:1px solid rgba(255,255,255,.09)}
+.topbar-inner{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{font-weight:850;letter-spacing:.06em;text-decoration:none;font-size:1rem}
+.brand span{color:var(--gold)}
+.location{font-size:.82rem;color:#c8d0dc}
+.nav{display:flex;gap:5px;align-items:center;overflow-x:auto;padding:10px 0 13px;scrollbar-width:thin}
+.nav a{white-space:nowrap;text-decoration:none;padding:8px 13px;border-radius:999px;color:#d4dbe5;font-size:.88rem;font-weight:650}
+.nav a:hover,.nav a:focus-visible{background:#29364a;color:#fff;outline:none}
+.hero{background:radial-gradient(ellipse at 90% 10%,rgba(234,182,77,.18),transparent 33%),linear-gradient(135deg,#101827,#1d2d43 75%,#263b50);color:white;overflow:hidden}
+.hero-inner{padding:76px 0 64px;display:grid;grid-template-columns:minmax(0,1.45fr) minmax(240px,.65fr);gap:48px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--gold);text-transform:uppercase;letter-spacing:.16em;font-size:.76rem;font-weight:800}
+.eyebrow:before{content:"";height:2px;width:24px;background:var(--gold)}
+h1{font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:1.06;letter-spacing:-.045em;margin:17px 0 16px;max-width:760px}
+.hero h1 span{color:var(--gold)}
+.role{font-size:clamp(1.05rem,2vw,1.3rem);font-weight:650;color:#e1e7ef;margin:0 0 15px}
+.hero-copy{max-width:650px;color:#c6cfdb;margin:0;font-size:1.03rem}
+.actions{display:flex;gap:11px;flex-wrap:wrap;margin-top:27px}
+.btn{display:inline-flex;justify-content:center;align-items:center;gap:9px;border:1px solid transparent;border-radius:12px;padding:12px 17px;font-size:.92rem;font-weight:750;text-decoration:none;cursor:pointer;transition:transform .18s ease,background .18s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--gold);color:#171d27}
+.btn-primary:hover{background:#f4c96d}
+.btn-outline{border-color:#647286;color:#fff;background:rgba(255,255,255,.04)}
+.btn-outline:hover{background:rgba(255,255,255,.1)}
+.hero-aside{border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.055);border-radius:22px;padding:25px}
+.monogram{width:68px;height:68px;display:grid;place-items:center;border-radius:20px;background:var(--gold);color:#151c27;font-size:1.4rem;font-weight:900;letter-spacing:-.06em;margin-bottom:18px}
+.hero-aside h2{font-size:1.04rem;margin:0 0 14px}
+.quickfacts{list-style:none;margin:0;padding:0;display:grid;gap:12px;color:#d5dce6;font-size:.9rem}
+.quickfacts li{display:flex;gap:10px;align-items:flex-start}
+.quickfacts b{color:#fff;font-weight:650}
+main{padding:30px 0 64px}
+.section{margin-top:26px}
+.section-heading{display:flex;justify-content:space-between;align-items:end;gap:20px;margin:0 0 18px}
+.kicker{font-size:.73rem;text-transform:uppercase;letter-spacing:.15em;color:#92702a;font-weight:850}
+h2{font-size:clamp(1.45rem,3vw,2rem);line-height:1.2;letter-spacing:-.025em;margin:5px 0 0}
+.section-note{color:var(--muted);font-size:.9rem;max-width:440px;margin:0}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(22px,4vw,32px);box-shadow:var(--shadow)}
+.profile-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:18px}
+.profile-text{color:#465164;margin:13px 0 0}
+.strength-list{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+.strength{display:flex;gap:10px;align-items:flex-start;font-size:.91rem;color:#344054}
+.check{flex:none;display:grid;place-items:center;width:22px;height:22px;border-radius:7px;background:#e7f4ee;color:var(--green);font-weight:900;font-size:.8rem}
+.fact-list{display:grid;gap:0;margin-top:10px}
+.fact{padding:13px 0;border-bottom:1px solid var(--line)}
+.fact:last-child{border-bottom:0}
+.fact small{display:block;color:var(--muted);font-size:.74rem;text-transform:uppercase;letter-spacing:.08em;font-weight:750}
+.fact strong{font-size:.97rem}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.timeline{border-left:2px solid #e6c777;padding:2px 0 2px 22px;margin-top:20px}
+.timeline-item{position:relative;padding-bottom:22px}
+.timeline-item:last-child{padding-bottom:0}
+.timeline-item:before{content:"";position:absolute;left:-29px;top:6px;width:11px;height:11px;border:3px solid #fff;background:var(--gold);border-radius:50%;box-shadow:0 0 0 1px #d7b45f}
+.timeline-item h3{font-size:1.03rem;margin:0 0 4px}
+.meta{color:var(--muted);font-size:.84rem}
+.timeline-item p{color:#4b5565;font-size:.92rem;margin:8px 0 0}
+.cert-list{display:grid;gap:12px;margin-top:20px}
+.cert{border:1px solid var(--line);border-radius:14px;padding:15px;display:flex;gap:13px;align-items:flex-start}
+.cert-icon{width:38px;height:38px;flex:none;display:grid;place-items:center;border-radius:11px;background:var(--gold-soft);color:#805b0b;font-weight:900}
+.cert strong{display:block;font-size:.94rem}
+.cert span{color:var(--muted);font-size:.85rem}
+.project-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.project{display:flex;flex-direction:column;min-height:100%;padding:23px}
+.project-top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.project-number{font-size:.78rem;color:#9a7628;font-weight:900;letter-spacing:.1em}
+.project-mark{display:grid;place-items:center;width:42px;height:42px;border-radius:13px;background:#f1f4f8;color:var(--ink);font-weight:900}
+.project h3{font-size:1.12rem;margin:18px 0 5px;letter-spacing:-.02em}
+.project .meta{font-size:.8rem}
+.project p{font-size:.91rem;color:#536072;margin:12px 0 17px}
+.project ul{margin:0 0 20px;padding-left:19px;color:#536072;font-size:.87rem}
+.project li+li{margin-top:5px}
+.project .project-foot{margin-top:auto;display:flex;flex-wrap:wrap;gap:8px}
+.text-link{font-size:.87rem;font-weight:800;color:#805b0b;text-decoration:none}
+.text-link:hover{text-decoration:underline}
+.status{font-size:.7rem;font-weight:800;border-radius:999px;padding:5px 9px;background:#eef2f6;color:#475467}
+.skill-groups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.skill-group h3{font-size:1rem;margin:0 0 14px}
+.skill-group p{font-size:.85rem;color:var(--muted);margin:-6px 0 14px}
+.tags{display:flex;gap:8px;flex-wrap:wrap}
+.tag{display:inline-flex;align-items:center;border:1px solid #e1e6ed;background:#f8fafc;border-radius:9px;padding:7px 10px;font-size:.82rem;font-weight:650;color:#344054}
+.level{display:flex;justify-content:space-between;gap:12px;align-items:center;margin:13px 0 6px;font-size:.9rem}
+.level span:last-child{font-size:.78rem;color:var(--muted);font-weight:650}
+.level-track{height:6px;background:#e8edf3;border-radius:99px;overflow:hidden}
+.level-track span{display:block;height:100%;background:linear-gradient(90deg,#b98b2e,var(--gold));border-radius:99px}
+.language-row{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);font-size:.91rem}
+.language-row:last-child{border:0}
+.contact-panel{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;background:var(--ink);color:#fff;border-radius:22px;padding:clamp(24px,4vw,38px);box-shadow:var(--shadow)}
+.contact-panel p{color:#c8d1dd;max-width:500px}
+.contact-items{display:grid;gap:12px;align-content:center}
+.contact-item{padding:13px 15px;border:1px solid #344155;border-radius:12px;overflow-wrap:anywhere}
+.contact-item small{display:block;color:#aab6c6;font-size:.73rem;text-transform:uppercase;letter-spacing:.08em}
+.contact-item a,.contact-item strong{font-size:.91rem;text-decoration:none;color:#fff}
+.contact-item a:hover{color:var(--gold)}
+footer{padding:22px 0 30px;color:var(--muted);font-size:.82rem;text-align:center}
+.note{font-size:.81rem;color:var(--muted);margin-top:14px}
+.print-cv{display:none}
+@media(max-width:850px){.hero-inner{grid-template-columns:1fr;gap:28px;padding:56px 0}.hero-aside{max-width:550px}.profile-grid,.contact-panel{grid-template-columns:1fr}.project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.container{width:min(100% - 24px,1100px)}.topbar-inner{min-height:62px}.location{display:none}.nav{padding-top:6px}.nav a{padding:8px 11px;font-size:.82rem}.hero-inner{padding:43px 0 38px}h1{font-size:2.65rem}.section-heading{display:block}.section-note{margin-top:8px}.two-col,.project-grid,.skill-groups{grid-template-columns:1fr}.strength-list{grid-template-columns:1fr}.card{border-radius:16px}.project{min-height:auto}.actions .btn{flex:1 1 auto}}
+@media print{
+  @page{size:A4;margin:14mm}
+  body{background:#fff;color:#111;font-size:10pt;line-height:1.42}
+  .topbar,main,footer{display:none!important}
+  .print-cv{display:block!important}
+  .print-head{border-bottom:3px solid #172337;padding-bottom:12px;margin-bottom:14px}
+  .print-head h1{font-size:25pt;line-height:1.1;margin:0 0 5px;color:#101827}
+  .print-head .headline{font-size:11pt;font-weight:700;color:#6b521c}
+  .print-contact{font-size:9pt;color:#344054;margin-top:7px}
+  .print-section{margin:13px 0}
+  .print-section h2{font-size:10pt;text-transform:uppercase;letter-spacing:.12em;border-bottom:1px solid #c7a24b;padding-bottom:4px;margin:0 0 7px}
+  .print-section p,.print-section li{font-size:9.4pt;margin-top:3px}
+  .print-section ul{margin:4px 0;padding-left:18px}
+  .print-two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .print-entry{margin:0 0 8px}
+  .print-entry strong{font-size:9.6pt}
+  .print-meta{color:#555;font-size:8.5pt}
+  a{color:inherit;text-decoration:none}
+}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="container">
+    <div class="topbar-inner">
+      <a class="brand" href="#home" aria-label="Ezekiel Muswere home">EZEKIEL <span>MUSWERE</span></a>
+      <div class="location">Mutare, Zimbabwe</div>
+    </div>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="#home">Home</a><a href="#profile">Profile</a><a href="#education">Education</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="container hero-inner">
+    <div>
+      <div class="eyebrow">Portfolio & professional CV</div>
+      <h1>Ezekiel Ngonidzashe <span>Muswere</span></h1>
+      <p class="role">Aspiring Software Developer | Information Systems</p>
+      <p class="hero-copy">An IT-focused problem solver building practical projects with Python and exploring software development, business systems and technology solutions. Eager to learn, contribute and grow in a professional team.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="#contact">Contact me <span aria-hidden="true">↗</span></a>
+        <a class="btn btn-outline" href="#projects">Explore projects</a>
+        <button class="btn btn-outline" id="downloadCv" type="button">Print / Save CV as PDF ↓</button>
+      </div>
+    </div>
+    <aside class="hero-aside" aria-label="Professional highlights">
+      <div class="monogram" aria-hidden="true">EM</div>
+      <h2>Professional snapshot</h2>
+      <ul class="quickfacts">
+        <li><span aria-hidden="true">⌘</span><span><b>Primary focus</b><br>Software development & IT</span></li>
+        <li><span aria-hidden="true">⌖</span><span><b>Based in</b><br>Mutare, Zimbabwe</span></li>
+        <li><span aria-hidden="true">▤</span><span><b>Hands-on project</b><br>Python desktop calculator</span></li>
+      </ul>
+    </aside>
+  </div>
+</section>
+
+<main class="container">
+  <section class="section" id="profile">
+    <div class="section-heading"><div><div class="kicker">01 / Introduction</div><h2>Professional profile</h2></div><p class="section-note">A clear overview of my interests, current capabilities and approach to work.</p></div>
+    <div class="profile-grid">
+      <article class="card">
+        <p class="profile-text">I am an aspiring software developer with a background in Information Systems studies and practical experience creating a desktop calculator using Python and Tkinter. I have foundational knowledge of Java, C#, HTML, SQL and Git, alongside experience with Microsoft Office applications. I enjoy learning by building, investigating how systems work and developing my technical skills through hands-on practice. I am seeking an opportunity to contribute, learn from experienced colleagues and grow across software development, IT support or technology consulting.</p>
+        <div class="strength-list">
+          <div class="strength"><span class="check">✓</span><span>Analytical thinking and practical problem-solving</span></div>
+          <div class="strength"><span class="check">✓</span><span>Self-directed learning and adaptability</span></div>
+          <div class="strength"><span class="check">✓</span><span>Communication and collaboration</span></div>
+          <div class="strength"><span class="check">✓</span><span>Organised approach to tasks and learning</span></div>
+        </div>
+      </article>
+      <aside class="card">
+        <div class="kicker">At a glance</div>
+        <div class="fact"><small>Career interest</small><strong>Software Development & IT</strong></div>
+        <div class="fact"><small>Location</small><strong>Mutare, Zimbabwe</strong></div>
+        <div class="fact"><small>Programming strength</small><strong>Python — Intermediate</strong></div>
+        <div class="fact"><small>Languages</small><strong>English and Shona</strong></div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section" id="education">
+    <div class="section-heading"><div><div class="kicker">02 / Learning</div><h2>Education & certifications</h2></div><p class="section-note">Education is listed accurately; no completed degree is implied.</p></div>
+    <div class="two-col">
+      <article class="card">
+        <div class="kicker">Academic background</div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <h3>Bachelor of Science in Information Systems</h3>
+            <div class="meta">Manicaland State University of Applied Sciences, Zimbabwe</div>
+            <p>Studies commenced in 2021. Studies currently paused; degree not completed.</p>
+          </div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="kicker">Certificates</div>
+        <div class="cert-list">
+          <div class="cert"><div class="cert-icon" aria-hidden="true">IT</div><div><strong>HEXCO Certificate</strong><span>Computer Operations and Packages</span></div></div>
+          <div class="cert"><div class="cert-icon" aria-hidden="true">LC</div><div><strong>LanguageCert Entry Level 3</strong><span>Listening, Reading, Writing and Speaking</span></div></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="projects">
+    <div class="section-heading"><div><div class="kicker">03 / Practical work</div><h2>Selected projects</h2></div><p class="section-note">Project descriptions focus on purpose and technology. Add verified repository or demo links when available.</p></div>
+    <div class="project-grid">
+      <article class="card project">
+        <div class="project-top"><span class="project-number">PROJECT 01</span><span class="project-mark" aria-hidden="true">＋</span></div>
+        <h3>Calculator Application</h3><div class="meta">Python · Tkinter</div>
+        <p>A desktop calculator created to practise Python programming and graphical user interface development.</p>
+        <ul><li>Supports common arithmetic operations.</li><li>Includes decimal and percentage calculations.</li><li>Provides a simple interactive desktop interface.</li></ul>
+        <div class="project-foot"><span class="status">Personal project</span></div>
+      </article>
+      <article class="card project">
+        <div class="project-top"><span class="project-number">PROJECT 02</span><span class="project-mark" aria-hidden="true">MZ</span></div>
+        <h3>Musika ZW</h3><div class="meta">HTML · CSS · JavaScript</div>
+        <p>A marketplace prototype concept designed around the needs of buyers and sellers in Zimbabwe.</p>
+        <ul><li>Explores product listings and search.</li><li>Prototype concepts include seller profiles and order workflows.</li><li>Useful practice in responsive interfaces and application logic.</li></ul>
+        <div class="project-foot"><span class="status">Prototype / in development</span></div>
+      </article>
+      <article class="card project">
+        <div class="project-top"><span class="project-number">PROJECT 03</span><span class="project-mark" aria-hidden="true">AT</span></div>
+        <h3>AgriTrack Pro</h3><div class="meta">HTML · CSS · JavaScript</div>
+        <p>A farm-management application concept focused on organising day-to-day farm information.</p>
+        <ul><li>Planned focus on inventory and record keeping.</li><li>Explores practical digital tools for agricultural workflows.</li><li>Scope and features should be demonstrated with a working build.</li></ul>
+        <div class="project-foot"><span class="status">Concept / development</span></div>
+      </article>
+    </div>
+    <p class="note">Portfolio integrity: only label a feature as complete when it works in your current build. Repository and live-demo links are intentionally omitted until real URLs are available.</p>
+  </section>
+
+  <section class="section" id="skills">
+    <div class="section-heading"><div><div class="kicker">04 / Capabilities</div><h2>Technical skills</h2></div><p class="section-note">Skill levels are described conservatively and can be refined as experience grows.</p></div>
+    <div class="skill-groups">
+      <article class="card skill-group">
+        <h3>Programming</h3>
+        <p>Languages used for practice and personal projects.</p>
+        <div class="level"><span>Python</span><span>Intermediate</span></div><div class="level-track"><span style="width:68%"></span></div>
+        <div class="level"><span>Java</span><span>Beginner</span></div><div class="level-track"><span style="width:32%"></span></div>
+        <div class="level"><span>C#</span><span>Beginner</span></div><div class="level-track"><span style="width:32%"></span></div>
+        <div class="level"><span>HTML</span><span>Basic</span></div><div class="level-track"><span style="width:38%"></span></div>
+      </article>
+      <article class="card skill-group">
+        <h3>Tools & databases</h3>
+        <p>Productivity, interface development and introductory data tools.</p>
+        <div class="tags"><span class="tag">Tkinter</span><span class="tag">Git — basic</span><span class="tag">SQL — basic</span><span class="tag">Microsoft Word</span><span class="tag">Microsoft Excel</span><span class="tag">PowerPoint</span><span class="tag">Microsoft Access</span></div>
+      </article>
+      <article class="card skill-group">
+        <h3>Professional strengths</h3>
+        <div class="tags"><span class="tag">Problem-solving</span><span class="tag">Research</span><span class="tag">Communication</span><span class="tag">Teamwork</span><span class="tag">Time management</span><span class="tag">Adaptability</span><span class="tag">Willingness to learn</span></div>
+      </article>
+      <article class="card skill-group">
+        <h3>Languages</h3>
+        <div class="language-row"><span>English</span><strong>Professional working proficiency</strong></div>
+        <div class="language-row"><span>Shona</span><strong>Fluent</strong></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="contact-panel">
+      <div>
+        <div class="kicker" style="color:var(--gold)">05 / Get in touch</div>
+        <h2>Let’s build something useful.</h2>
+        <p>I am open to entry-level opportunities, internships and junior roles in software development, IT and technology consulting. I welcome the chance to discuss how I can contribute and continue learning.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="mailto:ezekielngonidzashemuswere@gmail.com?subject=Professional%20Opportunity">Email me ↗</a>
+          <a class="btn btn-outline" href="https://wa.me/263780749788" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a>
+        </div>
+      </div>
+      <div class="contact-items">
+        <div class="contact-item"><small>Email</small><a href="mailto:ezekielngonidzashemuswere@gmail.com">ezekielngonidzashemuswere@gmail.com</a></div>
+        <div class="contact-item"><small>Phone</small><a href="tel:+263780749788">+263 780 749 788</a></div>
+        <div class="contact-item"><small>Location</small><strong>Mutare, Zimbabwe</strong></div>
+      </div>
+    </div>
+    <p class="note">References available upon request.</p>
+  </section>
+</main>
+
+<footer><div class="container">© <span id="year"></span> Ezekiel Ngonidzashe Muswere · Professional portfolio</div></footer>
+
+<!-- A clean, print-ready CV is shown only when the visitor selects Print / Save CV as PDF. -->
+<article class="print-cv" aria-label="Printable curriculum vitae">
+  <header class="print-head">
+    <h1>Ezekiel Ngonidzashe Muswere</h1>
+    <div class="headline">Aspiring Software Developer | Information Systems</div>
+    <div class="print-contact">Mutare, Zimbabwe · +263 780 749 788 · ezekielngonidzashemuswere@gmail.com</div>
+  </header>
+  <section class="print-section"><h2>Professional Profile</h2><p>Aspiring software developer with a background in Information Systems studies and hands-on experience building a desktop calculator using Python and Tkinter. Foundational knowledge of Java, C#, HTML, SQL and Git, plus Microsoft Office applications. Eager to contribute, learn from experienced colleagues and grow in software development, IT support or technology consulting.</p></section>
+  <div class="print-two">
+    <section class="print-section"><h2>Technical Skills</h2><ul><li>Python — intermediate</li><li>Java and C# — beginner</li><li>HTML and SQL — basic</li><li>Git — basic familiarity</li><li>Tkinter; Microsoft Word, Excel, PowerPoint and Access</li></ul></section>
+    <section class="print-section"><h2>Core Strengths</h2><ul><li>Problem-solving and analytical thinking</li><li>Communication and teamwork</li><li>Research and self-directed learning</li><li>Adaptability and time management</li></ul></section>
+  </div>
+  <section class="print-section"><h2>Projects</h2>
+    <div class="print-entry"><strong>Calculator Application</strong> <span class="print-meta">| Python, Tkinter</span><p>Personal desktop calculator supporting common arithmetic operations, decimal values and percentage calculations.</p></div>
+    <div class="print-entry"><strong>Musika ZW</strong> <span class="print-meta">| HTML, CSS, JavaScript</span><p>Marketplace prototype concept exploring product listings, search, seller profiles and order workflows.</p></div>
+    <div class="print-entry"><strong>AgriTrack Pro</strong> <span class="print-meta">| HTML, CSS, JavaScript</span><p>Farm-management application concept focused on inventory and agricultural record-keeping workflows.</p></div>
+  </section>
+  <div class="print-two">
+    <section class="print-section"><h2>Education</h2><div class="print-entry"><strong>Bachelor of Science in Information Systems</strong><div class="print-meta">Manicaland State University of Applied Sciences, Zimbabwe</div><p>Studies commenced in 2021; currently paused. Degree not completed.</p></div></section>
+    <section class="print-section"><h2>Certificates</h2><ul><li>HEXCO Certificate — Computer Operations and Packages</li><li>LanguageCert Entry Level 3 — Listening, Reading, Writing and Speaking</li></ul></section>
+  </div>
+  <section class="print-section"><h2>Languages</h2><p>English · Shona</p></section>
+  <section class="print-section"><h2>References</h2><p>Available upon request.</p></section>
+</article>
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById('downloadCv').addEventListener('click', function(){ window.print(); });
+</script>
+</body>
+</html>
